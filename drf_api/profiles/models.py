@@ -11,14 +11,14 @@ class Profile(models.Model):
     name = models.CharField(max_length=250, blank=True)
     content = models.TextField(blank=True)
     image= models.ImageField(
-        upload_to='images/', default='../default_profile_vug5i3'
+        upload_to='images/', default='images/default_profile_qxupvm'
     )
 
     class Meta:
         ordering = ['created_at']
 
     def __str__(self):
-        return f"{self.owner.username}'s Profile"
+        return f"{self.owner}'s Profile"
     
 def create_profile(sender, instance, created, **kwargs):
     if created:
