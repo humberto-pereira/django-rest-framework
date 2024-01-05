@@ -114,12 +114,11 @@ if 'CLIENT_ORIGIN' in os.environ:
         os.environ.get('CLIENT_ORIGIN'),
     ]
 else:
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$",  # Allows any subdomain of gitpod.io
-        r"^http://localhost:3000$",   # Allows exactly http://localhost:3000
-        r"^http://127\.0\.0\.1:3000$", # Allows exactly http://127.0.0.1:3000
+    CORS_ALLOWED_ORIGINS = [
+        'http://localhost:3000',  # Add your local front-end server address
+        'http://127.0.0.1:3000',  # Also add the loopback address if necessary
     ]
-
+    
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'drf_api.urls'
