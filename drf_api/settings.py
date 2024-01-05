@@ -115,9 +115,9 @@ if 'CLIENT_ORIGIN' in os.environ:
     ]
 else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$",
-        'http://localhost:3000',  # Add your local front-end server address
-        'http://127.0.0.1:3000',  # Also add the loopback address if necessary
+        r"^https://.*\.gitpod\.io$",  # Allows any subdomain of gitpod.io
+        r"^http://localhost:3000$",   # Allows exactly http://localhost:3000
+        r"^http://127\.0\.0\.1:3000$", # Allows exactly http://127.0.0.1:3000
     ]
 
 CORS_ALLOW_CREDENTIALS = True
