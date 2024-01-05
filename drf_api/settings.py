@@ -99,7 +99,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = [
-    
+    'corsheaders.middleware.CorsMiddleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -116,6 +116,8 @@ if 'CLIENT_ORIGIN' in os.environ:
 else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
         r"^https://.*\.gitpod\.io$",
+        'http://localhost:3000',  # Add your local front-end server address
+        'http://127.0.0.1:3000',  # Also add the loopback address if necessary
     ]
 
 CORS_ALLOW_CREDENTIALS = True
