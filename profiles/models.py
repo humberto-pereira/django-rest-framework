@@ -10,7 +10,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='django-rest-framework/default_profile_vug5i3'
+        upload_to='images/', default='v1703250915/django-rest-framework/default_profile_vug5i3.jpg'
     )
 
     class Meta:
